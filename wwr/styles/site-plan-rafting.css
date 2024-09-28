@@ -11,6 +11,7 @@ Fonts are separated by a & */
   --accent1-color: #a42212;
   --accent2-color: white; */
 
+  /* New Palette */
   --primary-color: #01295f;
   --secondary-color: #847979;
   --accent1-color: #04724d;
@@ -21,6 +22,7 @@ Fonts are separated by a & */
   --heading-font: Trebuchet MS, sans-serif;
   --paragraph-font: Verdana, sans-serif;
 
+  /* Original Colors */
   /* these colors below should be chosen from among your palette colors above */
   /* --headline-color-on-white:#396e94; /* headlines on a white background */
   /* --headline-color-on-color: white; headlines on a colored background */
@@ -32,6 +34,7 @@ Fonts are separated by a & */
   --nav-hover-link-color: white;
   --nav-hover-background-color: #396e94; */
 
+  /* New Palette */
   --headline-color-on-white: #01295f; /* headlines on a white background */
   --headline-color-on-color: #f4f7f5; /* headlines on a colored background */
   --paragraph-color-on-white: #01295f; /* paragraph text on a white background */
@@ -144,9 +147,9 @@ nav a:hover {
 }
 
 /* Added class to make text color of pallette readable */
-.td-color {
+/* .td-color {
   color: var(--paragraph-color-on-color);
-}
+} */
 .sitemap {
   display: grid;
   justify-content: center;
