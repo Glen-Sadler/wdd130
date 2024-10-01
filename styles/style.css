@@ -9,8 +9,9 @@ body {
 
 /* Styling h1, h2, h3 */
 h1, h2, h3 {
-  font-family: Trebuchet MS, sans-serif; /* Use Trebuchet MS for headers */
+  font-family: "Trebuchet MS", sans-serif; /* Use Trebuchet MS for headers */
 }
+
 /* Styling for the header and navigation */
 header {
   padding: 100px 20px; /* 100px top and bottom, 20px left and right */
