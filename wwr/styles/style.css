@@ -1,5 +1,11 @@
 body {
   background-color: #f4f7f5;
+  margin: 0;
+  padding: 0;
+}
+
+h2 {
+  margin: 0;
 }
 
 #content {
@@ -7,12 +13,22 @@ body {
   margin: 0 auto;
 }
 
-header, footer {
-  background-color: rgba(132, 121, 121,.7);
+header,
+footer {
+  background-color: rgba(132, 121, 121, 0.7);
+}
+
+h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 h4 {
-    color: #01295f;
+  color: #01295f;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p, nav {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 nav a {
@@ -20,6 +36,7 @@ nav a {
   text-align: center;
   color: #f4f7f5;
   text-decoration: none;
+  padding: 35px;
 }
 
 nav a:hover {
@@ -31,12 +48,17 @@ nav a:hover {
   width: 80px;
 }
 
+#logo-link {
+  padding-top: 5px;
+}
+
 #hero-img {
   width: 100%;
 }
 
 .icon {
   width: 80px;
+  padding-top: 10px;
 }
 
 #hero-msg h1,
@@ -44,8 +66,11 @@ nav a:hover {
   text-align: center;
 }
 
-.home-title{
-    color: #01295f;
+.home-title {
+  color: #01295f;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 2em;
+  margin-top: 10px;
 }
 
 .button-box {
@@ -56,34 +81,57 @@ main section {
   text-align: center;
 }
 
-.book, .join {
-    background-color: #04724d;
-    color: #f4f7f5;
-    text-decoration: none;
+main section img {
+  box-sizing: border-box;
 }
 
-.book:hover, .join:hover{
-    background-color: #01295f;
+.book,
+.join {
+  background-color: #04724d;
   color: #f4f7f5;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 15px 30px;
+  margin-top: 50px;
+  border-radius: 5px;
+}
+
+.book:hover,
+.join:hover {
+  background-color: #01295f;
+  color: #f4f7f5;
+}
+
+.card-img {
+  border: 10px solid rgba(132, 121, 121, 0.7);
+}
+
+.rivers-card,
+.camping-card,
+.rapids-card {
+  margin: 200px 0;
 }
 
 #background {
   height: 725px;
-  background-color: rgb(4, 114, 77, .3);
+  background-color: rgb(4, 114, 77, 0.3);
 }
 
 .msg {
-    background-color: rgba(132, 121, 121,.7);
+  background-color: rgba(132, 121, 121, 0.7);
+  line-height: 1.5em;
+  padding: 35px;
 }
 
 .msg h2 {
-    color: #f4f7f5;
+  color: #f4f7f5;
 }
 
 .msg p {
-    color: #f4f7f5;
+  color: #f4f7f5;
+  font-size: 0.8em;
+  padding-bottom: 15px;
 }
-
 
 .coming_soon {
   margin: 100px auto;
@@ -94,20 +142,25 @@ main section {
 }
 
 footer {
-    color: #01295f;
+  color: #01295f;
+  padding: 25px 50px;
+  margin-top: 200px;
 }
 
 footer p {
-    font-size: 1.2em;
+  font-size: 1.2em;
 }
 
 footer a {
-    text-decoration: none;
-    color: #01295f;
+  text-decoration: none;
+  color: #01295f;
 }
 
-
 footer p a:hover {
-    text-decoration: underline;
-    color: #ffffff;
+  text-decoration: underline;
+  color: #ffffff;
+}
+
+footer .social img {
+  padding-top: 15px;
 }
