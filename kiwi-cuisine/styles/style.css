@@ -1,0 +1,404 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+/* General reset */
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#top-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #ddcfc8;
+}
+
+.main h1 {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 200px;
+  font-size: 1.5em;
+  color: #2e0014;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 300px auto;
+  font-weight: 600;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensure it stays above other content */
+  background-color: #ddcfc8; /* Initial transparent background */
+  transition: background-color 0.3s ease; /* Smooth transition for color change */
+}
+
+nav {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-end;
+}
+
+.nav-container {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+}
+
+.nav-container a {
+  font-size: 1em;
+  text-align: center;
+  color: #323232;
+  text-decoration: none;
+  padding: 10px 25px;
+}
+
+.active,
+.nav-container a:hover {
+  font-weight: 700;
+  border-bottom: 1px solid #323232;
+}
+
+#brand {
+  margin: 0;
+  font-family: 'DM Serif Display', serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  font-size: 2em;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+#brand a {
+  text-decoration: none;
+  color: #323232;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, auto);
+  padding-top: 100px;
+  max-width: 80%;
+  margin: 0 auto; /* Center the hero section */
+  overflow: hidden; /* Ensure no overflow if the image is larger */
+}
+
+.hero-preface {
+  grid-column: 1 / 6;
+  grid-row: 1 / 2;
+  padding-bottom: 20px;
+  height: 50px;
+}
+
+.hero-heading {
+  font-size: 4.5em;
+  font-weight: 400;
+  line-height: 1;
+  grid-column: 1 / 8;
+  grid-row: 2 / 3;
+}
+
+.hero-description {
+  grid-column: 1 / 8;
+  grid-row: 3 / 4;
+  padding-top: 20px;
+  height: auto;
+}
+
+.hero-button {
+  cursor: pointer;
+  padding: 20px 50px;
+  grid-column: 1 / 3;
+  grid-row: 4 / 5;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 30px;
+  border: none;
+  font-size: 1.25em;
+  font-weight: 600;
+  background-color: #ffc857;
+  margin-left: 10%;
+}
+
+.hero-button a {
+  text-decoration: none;
+  color: #000000;
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: normal;
+}
+
+.spacer {
+  height: 50px;
+}
+
+.mid-content {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, auto);
+  max-width: 100%;
+  margin: 0 auto; /* Center the hero section */
+  overflow: hidden; /* Ensure no overflow if the image is larger */
+  background-color: #ffffff;
+}
+
+.mid-content img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  grid-column: 1 / 11;
+  grid-row: 1 / 4;
+}
+
+.mid-content iframe {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  grid-column: 1 / 11;
+  grid-row: 1 / 4;
+}
+
+.mid-content-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2 / 8;
+  grid-row: 4 / 5;
+  padding: 50px;
+  height: auto;
+}
+
+.menu-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: 525px;
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+  margin-top: 1.25em;
+  /* margin-bottom: 1.25em; */
+}
+
+.menu-content div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.menu-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* object-fit: contain; Adjusts image to fit within the bounds without cropping */
+}
+
+.menu-content h2 {
+  font-size: 1.1em;
+}
+
+.menu-content div :nth-child(2) {
+  margin-top: 1.5em;
+}
+
+/* Map styling - Contact page */
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+}
+
+/* Contact Form Styling */
+
+.form-container {
+  background-color: #323232;
+  width: 90%;
+  padding: 35px 50px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  box-shadow: 20px 30px 25pc rgba(0, 0, 0, 0.15);
+}
+
+.form-container h1 {
+  color: #ffffff;
+  font-size: 1.275rem;
+  text-align: center;
+}
+
+.form-container p {
+  color: #ffffff;
+  position: relative;
+  margin: auto;
+  width: 100%;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+  position: relative;
+  margin: 30px auto 0 auto;
+}
+
+.form-row {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px 30px;
+  margin-bottom: 20px;
+}
+
+.form-column textarea,
+.form-column input {
+  font-weight: 400;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1.2px solid #c4cae0;
+  margin-top: 5px;
+}
+
+.form-column textarea {
+  resize: none;
+}
+
+.form-column label {
+  color: #ffffff;
+}
+
+.form-column textarea:focus,
+.form-container input:focus {
+  outline: none;
+  border-color: #008000;
+}
+
+.form button {
+  border: none;
+  padding: 10px 50px;
+  font-size: 1.25em;
+  font-weight: 600;
+  background-color: #fec857;
+  border-radius: 30px;
+  font-size: 1rem;
+  color: #000000;
+  cursor: pointer;
+}
+
+.social a {
+  margin: 0 10px 10px 0;
+  font-size: 20px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: black;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50px;
+  color: #fff;
+}
+
+.social-media a:hover,
+.social-media a:focus {
+  color: #008000;
+}
+
+footer {
+  text-align: center;
+  padding: 100px;
+  background-color: #323232; /* Matches the brand color */
+  color: #ffffff; /* White text */
+  font-size: 0.8em;
+}
+
+/* Add styles specific to screens smaller than or equal to 900px */
+
+@media (max-width: 900px) {
+  .logo {
+    padding-left: 0;
+  }
+  .hero {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding: 10px;
+  }
+
+  .hero-button {
+    margin-left: 10%;
+  }
+  .mid-content {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Adjust grid columns for smaller screens */
+    grid-template-rows: auto; /* Change row height if needed */
+    padding: 10px; /* Add padding for better spacing on smaller screens */
+  }
+
+  .menu-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 3 columns */
+    grid-auto-rows: 400px;
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 1.25em;
+    margin-bottom: 1.25em;
+  }
+
+  .mid-content img {
+    grid-column: 1 / -1; /* Make image span across the entire width */
+    grid-row: 1 / 2; /* Adjust row position if necessary */
+  }
+
+  .mid-content-description {
+    grid-column: 1 / -1; /* Make description span across entire width */
+    grid-row: 2 / 3; /* Position it below the image */
+    /* text-align: center; Center-align text for better readability */
+    padding: 10px;
+  }
+
+  /* Additional adjustments for smaller screens */
+  header {
+    font-size: 0.9em; /* Scale down header text */
+    padding: 10px; /* Reduce padding in the header */
+  }
+
+  nav a {
+    padding: 10px 20px; /* Adjust navigation padding */
+    font-size: 0.9em; /* Scale down navigation font size */
+  }
+
+  .hero {
+    max-width: 100%; /* Ensure hero section fits within smaller screen */
+  }
+
+  footer {
+    padding: 50px; /* Adjust footer padding */
+    font-size: 0.7em; /* Scale down footer text */
+  }
+}
