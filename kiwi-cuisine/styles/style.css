@@ -94,6 +94,9 @@ nav {
   color: #323232;
 }
 
+/* These styles are used in the hero section of all
+three pages i.e., Home, Menu, and Contact */
+
 .hero-container {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -154,6 +157,8 @@ nav {
   height: 50px;
 }
 
+/* styles to hold the first image on both the Home, and Menu Page
+just below the hero section  */
 .mid-content {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -172,6 +177,8 @@ nav {
   grid-row: 1 / 4;
 }
 
+/* Styles for map on contact page */
+
 .mid-content iframe {
   width: 100%;
   height: auto;
@@ -179,6 +186,9 @@ nav {
   grid-column: 1 / 11;
   grid-row: 1 / 4;
 }
+
+/* Styling for content after the first images 
+(including map on contact page), on all pages  */
 
 .mid-content-description {
   display: flex;
@@ -189,6 +199,9 @@ nav {
   padding: 50px;
   height: auto;
 }
+
+/* Menu Grid to hold pictures of meals description
+and cost. */
 
 .menu-content {
   display: grid;
@@ -201,6 +214,7 @@ nav {
   /* margin-bottom: 1.25em; */
 }
 
+/*  */
 .menu-content div {
   display: flex;
   flex-direction: column;
