@@ -177,6 +177,27 @@ just below the hero section  */
   grid-row: 1 / 4;
 }
 
+
+/* styles to hold the second image on thw home page */
+.mid-content-1 {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(4, auto);
+  max-width: 100%;
+  margin: 0 auto; /* Center the hero section */
+  overflow: hidden; /* Ensure no overflow if the image is larger */
+  background-color: #ffffff;
+}
+
+.mid-content-1 img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  grid-column: 1 / 11;
+  grid-row: 1 / 4;
+}
+
+
 /* Styles for map on contact page */
 
 .mid-content iframe {
@@ -191,6 +212,16 @@ just below the hero section  */
 (including map on contact page), on all pages  */
 
 .mid-content-description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  grid-column: 2 / 8;
+  grid-row: 4 / 5;
+  padding: 50px;
+  height: auto;
+}
+
+.mid-content-description-1 {
   display: flex;
   align-items: center;
   justify-content: center;
