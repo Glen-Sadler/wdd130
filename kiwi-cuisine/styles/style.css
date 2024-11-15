@@ -9,6 +9,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   font-family: 'Nunito Sans', sans-serif;
@@ -18,7 +19,7 @@ body {
   flex-direction: column;
 }
 
-#top-content {
+#content-container {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -35,14 +36,26 @@ body {
 
 header {
   display: grid;
-  grid-template-columns: 300px auto;
+  grid-template-columns: auto 400px;
   font-weight: 600;
-  padding: 20px;
+  padding: 20px 60px;
   position: sticky;
   top: 0;
   z-index: 1000; /* Ensure it stays above other content */
   background-color: #ddcfc8; /* Initial transparent background */
   transition: background-color 0.3s ease; /* Smooth transition for color change */
+  position: relative;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+  position: absolute; /*Positioned absolutely*/
+  right: 60px; /* 20px from the right */
+  top: 25px;
+  width: 30px;
+  height: 25px;
+  z-index: 1001; /* Keep above other header elements */
 }
 
 nav {
@@ -57,7 +70,7 @@ nav {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 5px;
+  gap: 2px;
 }
 
 .nav-container a {
@@ -68,30 +81,21 @@ nav {
   padding: 10px 25px;
 }
 
-.active,
 .nav-container a:hover {
   font-weight: 700;
-  border-bottom: 1px solid #323232;
+  font-size: 1.1em;
+  color: #ffffff;
 }
 
-#brand {
-  margin: 0;
-  font-family: 'DM Serif Display', serif;
-  font-weight: 100;
-  text-transform: uppercase;
-  letter-spacing: 6px;
-  font-size: 2em;
+#active {
+  font-weight: 700;
+  color: #ffffff;
 }
 
 .logo {
   display: flex;
   align-items: center;
   padding-left: 20px;
-}
-
-#brand a {
-  text-decoration: none;
-  color: #323232;
 }
 
 /* These styles are used in the hero section of all
@@ -101,7 +105,7 @@ three pages i.e., Home, Menu, and Contact */
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(4, auto);
-  padding-top: 100px;
+  padding-top: 50px;
   max-width: 80%;
   margin: 0 auto; /* Center the hero section */
   overflow: hidden; /* Ensure no overflow if the image is larger */
@@ -132,7 +136,7 @@ three pages i.e., Home, Menu, and Contact */
 .hero-button {
   cursor: pointer;
   padding: 20px 50px;
-  grid-column: 1 / 3;
+  grid-column: 1 / 4;
   grid-row: 4 / 5;
   margin-top: 50px;
   margin-bottom: 50px;
@@ -161,42 +165,24 @@ three pages i.e., Home, Menu, and Contact */
 just below the hero section  */
 .mid-content {
   display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(4, auto);
-  max-width: 100%;
-  margin: 0 auto; /* Center the hero section */
-  overflow: hidden; /* Ensure no overflow if the image is larger */
+  grid-template-columns: repeat(10, 1fr); /* 10 equal columns */
+  grid-template-rows: repeat(4, auto); /* 4 rows with auto height */
   background-color: #ffffff;
 }
 
 .mid-content img {
   width: 100%;
-  height: auto;
-  object-fit: cover;
-  grid-column: 1 / 11;
-  grid-row: 1 / 4;
+  grid-column: span 10; /* Images span all 10 columns */
+  grid-row: auto; /* Each image takes up a single row */
 }
 
-
-/* styles to hold the second image on thw home page */
-.mid-content-1 {
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  grid-template-rows: repeat(4, auto);
-  max-width: 100%;
-  margin: 0 auto; /* Center the hero section */
-  overflow: hidden; /* Ensure no overflow if the image is larger */
-  background-color: #ffffff;
+.mid-content-description-1,
+.mid-content-description-2 {
+  grid-column: 2 / 8; /* Paragraphs span from column 2 to column 8 */
+  grid-row: auto; /* Each <p> tag takes up a single row */
+  text-align: justify; /* Optional: align text for better readability */
+  padding: 50px 0px; /* Optional: add padding around text */
 }
-
-.mid-content-1 img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  grid-column: 1 / 11;
-  grid-row: 1 / 4;
-}
-
 
 /* Styles for map on contact page */
 
@@ -204,31 +190,8 @@ just below the hero section  */
   width: 100%;
   height: auto;
   object-fit: cover;
-  grid-column: 1 / 11;
+  grid-column: span 10;
   grid-row: 1 / 4;
-}
-
-/* Styling for content after the first images 
-(including map on contact page), on all pages  */
-
-.mid-content-description {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-column: 2 / 8;
-  grid-row: 4 / 5;
-  padding: 50px;
-  height: auto;
-}
-
-.mid-content-description-1 {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  grid-column: 2 / 8;
-  grid-row: 4 / 5;
-  padding: 50px;
-  height: auto;
 }
 
 /* Menu Grid to hold pictures of meals description
@@ -236,13 +199,13 @@ and cost. */
 
 .menu-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-columns: repeat(10, 1fr); /* 3 columns */
   grid-auto-rows: 525px;
-  max-width: 90%;
+  max-width: 100%;
   margin: 0 auto;
   overflow: hidden;
   margin-top: 1.25em;
-  /* margin-bottom: 1.25em; */
+  margin-bottom: 1.25em;
 }
 
 /*  */
@@ -259,6 +222,7 @@ and cost. */
   width: 100%;
   height: 100%;
   object-fit: cover;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   /* object-fit: contain; Adjusts image to fit within the bounds without cropping */
 }
 
@@ -270,24 +234,94 @@ and cost. */
   margin-top: 1.5em;
 }
 
+#menu-item-1 {
+  grid-column: 2 / 6;
+  grid-row: 1 / 2;
+}
+
+#menu-item-2 {
+  grid-column: 6 / 10;
+  grid-row: 1 / 2;
+}
+
+#menu-item-3 {
+  grid-column: 2 / 6;
+  grid-row: 2 / 3;
+}
+
+#menu-item-4 {
+  grid-column: 6 / 10;
+  grid-row: 2 / 3;
+}
+
+#menu-item-5 {
+  grid-column: 2 / 6;
+  grid-row: 3 / 4;
+}
+
+#menu-item-6 {
+  grid-column: 6 / 10;
+  grid-row: 3 / 4;
+}
+
+#menu-item-7 {
+  grid-column: 2 / 6;
+  grid-row: 4 / 5;
+}
+
+#menu-item-8 {
+  grid-column: 6 / 10;
+  grid-row: 4 / 5;
+}
+
+#menu-item-9 {
+  grid-column: 2 / 6;
+  grid-row: 5 / 6;
+}
+
+#menu-item-10 {
+  grid-column: 6 / 10;
+  grid-row: 5 / 6;
+}
+
+#menu-item-11 {
+  grid-column: 2 / 6;
+  grid-row: 6 / 7;
+}
+
+#menu-item-12 {
+  grid-column: 6 / 10;
+  grid-row: 6 / 7;
+}
+
 /* Map styling - Contact page */
 
 .map-container {
   display: flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
   height: 400px;
+  grid-column: 2 / 10;
 }
 
 /* Contact Form Styling */
 
+.map-wrapper,
+.form-wrapper {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
 .form-container {
   background-color: #323232;
-  width: 90%;
+  width: 100%;
   padding: 35px 50px;
   margin: 0 auto;
   margin-bottom: 50px;
   box-shadow: 20px 30px 25pc rgba(0, 0, 0, 0.15);
+  grid-column: 2 / 10;
 }
 
 .form-container h1 {
@@ -354,6 +388,10 @@ and cost. */
   cursor: pointer;
 }
 
+.social {
+  grid-column: 5 / 7;
+}
+
 .social a {
   margin: 0 10px 10px 0;
   font-size: 20px;
@@ -373,77 +411,221 @@ and cost. */
 }
 
 footer {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
   text-align: center;
-  padding: 100px;
+  padding: 50px 0px;
   background-color: #323232; /* Matches the brand color */
   color: #ffffff; /* White text */
   font-size: 0.8em;
 }
 
-/* Add styles specific to screens smaller than or equal to 900px */
+.contact-details {
+  text-align: left;
+  grid-column: 2 / 4;
+}
 
+.contact-details p {
+  margin: 5px 0px;
+}
+
+#email-kiwikai {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+/* Hamburger menu styling */
+/* Hide the checkbox input */
+#menu-toggle {
+  display: none;
+}
+
+/* Hamburger Menu Icon */
+.menu-icon {
+  display: none; /* Hidden by default for larger screens */
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 25px;
+  cursor: pointer;
+}
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: black;
+  border-radius: 2px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Hamburger icon animation when active */
+#menu-toggle:checked + .menu-icon span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .menu-icon span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Hanmburger menu styling end */
+
+/* Add styles specific to screens smaller than or equal to 900px */
 @media (max-width: 900px) {
+  /* Hamburger Menu Styling */
+  .menu-icon {
+    display: flex;
+  }
+
+  nav {
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 60px;
+    background-color: #ddcfc8;
+    width: 200px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+  }
+
+  /* Show nav when menu toggle is checked */
+  #menu-toggle:checked ~ nav {
+    transform: translateX(0);
+  }
+
+  .nav-container {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .nav-container a {
+    padding: 10px;
+    text-align: left;
+  }
+
+  .nav-container li {
+    width: 150px;
+    padding: 10px 0px;
+    background-color: #fec857;
+    border-radius: 10px;
+  }
+
+  /* Hamburger MENU End */
+
   .logo {
     padding-left: 0;
   }
   .hero {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
-    padding: 10px;
+    padding: 40px;
+  }
+
+  .hero-heading {
+    font-size: 3.75em;
+    grid-column: span 10;
+  }
+
+  .hero-description {
+    grid-column: span 10;
   }
 
   .hero-button {
     margin-left: 10%;
   }
-  .mid-content {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Adjust grid columns for smaller screens */
-    grid-template-rows: auto; /* Change row height if needed */
-    padding: 10px; /* Add padding for better spacing on smaller screens */
+
+  .mid-content-description-1,
+  .mid-content-description-2 {
+    grid-column: 2 / 10; /* Paragraphs span from column 2 to column 8 */
   }
 
   .menu-content {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 3 columns */
-    grid-auto-rows: 400px;
-    max-width: 90%;
+    /* grid-template-columns: repeat(2, 1fr); 2 columns */
+    grid-auto-rows: 600px;
+    max-width: 100%;
     margin: 0 auto;
     overflow: hidden;
     margin-top: 1.25em;
     margin-bottom: 1.25em;
+    gap: 0px;
   }
 
-  .mid-content img {
-    grid-column: 1 / -1; /* Make image span across the entire width */
-    grid-row: 1 / 2; /* Adjust row position if necessary */
+  #menu-item-1 {
+    grid-column: span 10;
+    grid-row: 1 / 2;
   }
 
-  .mid-content-description {
-    grid-column: 1 / -1; /* Make description span across entire width */
-    grid-row: 2 / 3; /* Position it below the image */
-    /* text-align: center; Center-align text for better readability */
-    padding: 10px;
+  #menu-item-2 {
+    grid-column: span 10;
+    grid-row: 2 / 3;
   }
 
-  /* Additional adjustments for smaller screens */
-  header {
-    font-size: 0.9em; /* Scale down header text */
-    padding: 10px; /* Reduce padding in the header */
+  #menu-item-3 {
+    grid-column: span 10;
+    grid-row: 3 / 4;
   }
 
-  nav a {
-    padding: 10px 20px; /* Adjust navigation padding */
-    font-size: 0.9em; /* Scale down navigation font size */
+  #menu-item-4 {
+    grid-column: span 10;
+    grid-row: 4 / 5;
   }
 
-  .hero {
-    max-width: 100%; /* Ensure hero section fits within smaller screen */
+  #menu-item-5 {
+    grid-column: span 10;
+    grid-row: 5 / 6;
   }
 
-  footer {
-    padding: 50px; /* Adjust footer padding */
-    font-size: 0.7em; /* Scale down footer text */
+  #menu-item-6 {
+    grid-column: span 10;
+    grid-row: 6 / 7;
+  }
+
+  #menu-item-7 {
+    grid-column: span 10;
+    grid-row: 7 / 8;
+  }
+
+  #menu-item-8 {
+    grid-column: span 10;
+    grid-row: 8 / 9;
+  }
+
+  #menu-item-9 {
+    grid-column: span 10;
+    grid-row: 9 / 10;
+  }
+
+  #menu-item-10 {
+    grid-column: span 10;
+    grid-row: 10 / 11;
+  }
+
+  #menu-item-11 {
+    grid-column: span 10;
+    grid-row: 11 / 12;
+  }
+
+  #menu-item-12 {
+    grid-column: span 10;
+    grid-row: 12 / 13;
+  }
+
+  .map-container {
+    /* width: 100%; */
+    grid-column: span 10;
+  }
+
+  .form-container {
+    /* width: 100%; */
+    grid-column: span 10;
   }
 }

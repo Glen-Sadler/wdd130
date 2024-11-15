@@ -10,16 +10,36 @@
     <title>Kiwi-Cuisine | Menu</title>
   </head>
   <body>
-    <div id="top-content">
+    <div id="content-container">
       <header>
         <div class="logo">
-          <p id="brand"><a href="index.html">Kiwi Cuisine</a></p>
+          <a aria-label="Go to Home Page" href="index.html"
+            ><svg width="300" height="50" xmlns="http://www.w3.org/2000/svg">
+              <title>Go to Home Page</title>
+              <text
+                x="10"
+                y="35"
+                font-family="'DM Serif Display', serif"
+                font-size="26"
+                fill="black"
+                letter-spacing="10">
+                KIWI CUISINE
+              </text>
+            </svg></a
+          >
         </div>
+        <!-- Hamburger Menu Toggle -->
+        <input type="checkbox" id="menu-toggle" >
+        <label for="menu-toggle" class="menu-icon" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <!-- Navigation Menu -->
         <nav>
           <ul class="nav-container">
             <li><a href="index.html">Home</a></li>
-            <li><a class="active" href="menu.html">Menu</a></li>
-            <!-- <li><a href="about.html">About Us</a></li> -->
+            <li><a id="active" href="menu.html">Menu</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </nav>
@@ -29,7 +49,9 @@
           <p class="hero-preface">
             Experience Authentic Indigenous Flavours Today
           </p>
-          <h2 class="hero-heading">Savour the Authentic Flavours of Our Menu</h2>
+          <h2 class="hero-heading">
+            Relish the Authentic Flavours of Our Menu
+          </h2>
           <p class="hero-description">
             At our restaurant, we celebrate the rich culinary heritage of
             indigenous New Zealand with an array of exquisite dishes. Dive into
@@ -44,11 +66,16 @@
           </p>
         </div>
         <div>
-          <button class="hero-button" onclick="location.href='contact.html'">Reserve Now</button>
+          <button class="hero-button" onclick="location.href='contact.html'">
+            Reserve Now
+          </button>
         </div>
         <div class="mid-content">
-          <img src="./images/13-nz-steam-pudding_v1.webp" alt="NZ Crayfish" >
-          <p class="mid-content-description">
+          <img
+            id="image-1"
+            src="images/13-nz-steam-pudding_v1.jpg"
+            alt="steam pudding" >
+          <p class="mid-content-description-1">
             Our menu also features tender lamb, flavorful beef, and juicy pork,
             alongside the renowned Bluff oysters, celebrated for their
             exceptional taste and freshness. Complement your meal with
@@ -61,8 +88,8 @@
         </div>
       </div>
       <div class="menu-content">
-        <div>
-          <img src="./images/02-nz-king-salmon_v1.webp" alt="NZ Salmon" >
+        <div id="menu-item-1">
+          <img src="images/02-nz-king-salmon_v1.jpg" alt="NZ Salmon" >
           <h2>New Zealand Salmon</h2>
           <p>
             New Zealand salmon, renowned for its rich flavor and buttery
@@ -71,8 +98,8 @@
           </p>
           <h2>$20.00</h2>
         </div>
-        <div>
-          <img src="./images/03-nz-kina_v1.webp" alt="NZ Kina" >
+        <div id="menu-item-2">
+          <img src="images/03-nz-kina_v1.jpg" alt="NZ Kina" >
           <h2>Kina (Sea Urchin)</h2>
           <p>
             New Zealand kina are edible sea urchins, prized for their creamy,
@@ -80,19 +107,19 @@
           </p>
           <h2>$50.00</h2>
         </div>
-        <div class="menu-item">
+        <div id="menu-item-3">
           <img
-            src="./images/04-nz-green-lipped-mussel_v1.webp"
+            src="images/04-nz-green-lipped-mussels_v1.jpg"
             alt="Green lipped mussel" >
           <h2>Green Lipped Mussels</h2>
           <p>
             Green-lipped mussels are plump, tender shellfish native to New
-            Zealand, known for their unique green shell and rich, savoury flavor.
+            Zealand, known for their unique green shell and rich flavor.
           </p>
           <h2>$20.00 a doz</h2>
         </div>
-        <div class="menu-item">
-          <img src="./images/05-nz-paua-abalone_v1.webp" alt="NZ Paua" >
+        <div id="menu-item-4">
+          <img src="images/05-nz-paua-abalone_v1.jpg" alt="NZ Paua" >
           <h2>Paua (Abalone)</h2>
           <p>
             NZ paua, also known as abalone, features a vibrant shell, offering a
@@ -100,8 +127,10 @@
           </p>
           <h2>$5.00 each</h2>
         </div>
-        <div class="menu-item">
-          <img src="./images/06-nz-titi-mutton-bird_v1.webp" alt="NZ mutton bird" >
+        <div id="menu-item-5">
+          <img
+            src="images/06-nz-titi-mutton-bird_v1.jpg"
+            alt="NZ mutton bird" >
           <h2>Tītī (Mutton Bird)</h2>
           <p>
             New Zealand tītī, or muttonbird, is a traditional Māori delicacy
@@ -109,8 +138,8 @@
           </p>
           <h2>$50.00</h2>
         </div>
-        <div class="menu-item">
-          <img src="./images/07-nz-beef-and-lamb_v1.webp" alt="NZ beef and lamb" >
+        <div id="menu-item-6">
+          <img src="images/07-nz-beef-and-lamb_v1.jpg" alt="NZ beef and lamb" >
           <h2>New Zealand Mutton</h2>
           <p>
             NZ lamb is renowned for its tenderness and rich flavor, showcasing
@@ -118,8 +147,8 @@
           </p>
           <h2>$50.00</h2>
         </div>
-        <div class="menu-item">
-          <img src="./images/08-nz-bluff-oysters_v1.webp" alt="NZ Oysters" >
+        <div id="menu-item-7">
+          <img src="images/08-nz-bluff-oysters_v1.jpg" alt="NZ Oysters" >
           <h2>Bluff Oysters</h2>
           <p>
             NZ Bluff oysters are prized delicacies known for their creamy
@@ -127,8 +156,8 @@
           </p>
           <h2>$20.00 a doz</h2>
         </div>
-        <div class="menu-item">
-          <img src="./images/09-nz-hangi_v1.webp" alt="NZ Hangi" >
+        <div id="menu-item-8">
+          <img src="images/09-nz-hangi_v1.jpg" alt="NZ Hangi" >
           <h2>Hāngi Meal</h2>
           <p>
             Your choice of Pork & Chicken or Lamb & Chicken or Chicken only with
@@ -136,8 +165,8 @@
           </p>
           <h2>$20.00</h2>
         </div>
-        <div class="menu-item">
-          <img src="./images/10-nz-boilup_v1.webp" alt="NZ Boilup" >
+        <div id="menu-item-9">
+          <img src="images/10-nz-boilup_v1.jpg" alt="NZ Boilup" >
           <h2>Boil-up Meals</h2>
           <p>
             Your choice of Brisket or Porkbones with potato, kumara, watercress,
@@ -145,8 +174,8 @@
           </p>
           <h2>$20.00</h2>
         </div>
-        <div class="menu-item">
-          <img src="./images/11-nz-rewana-bread_v1.webp" alt="NZ Rewena bread" >
+        <div id="menu-item-10">
+          <img src="images/11-nz-rewana-bread_v1.jpg" alt="NZ Rewena bread" >
           <h2>Rewana Bread</h2>
 
           <p>
@@ -155,8 +184,10 @@
           </p>
           <h2>$1.00 a slice</h2>
         </div>
-        <div class="menu-item">
-          <img src="./images/12-watercress-salad_v1.webp" alt="water cress salad" >
+        <div id="menu-item-11">
+          <img
+            src="images/12-watercress-salad_v1.jpg"
+            alt="water cress salad" >
           <h2>Watercress Salad</h2>
           <p>
             Watercress, cherry tomatoes, red onion & feta cheese drizzled with
@@ -164,8 +195,8 @@
           </p>
           <h2>$4.00 a side</h2>
         </div>
-        <div class="menu-item">
-          <img src="./images/14-nz-fried-bread_v1.webp" alt="Fried Bread" >
+        <div id="menu-item-12">
+          <img src="images/14-nz-fried-bread_v1.jpg" alt="Fried Bread" >
           <h2>Fried Bread</h2>
           <p>
             Hot fried bread - the perfect companion to a delicious Hangi or Boil
@@ -174,20 +205,28 @@
           <h2>$2.00 each</h2>
         </div>
       </div>
+      <footer>
+        <div class="contact-details">
+          <h4>CONTACT DETAILS:</h4>
+          <p>Address: 187 Lower Dent Street, Whangarei 0110</p>
+          <p>Phone: 0800 235 235</p>
+          <a id="email-kiwikai" href="mailto:kiwikai@gmail.com"
+            ><strong>Email Us:</strong> kiwikai@gmail.com</a
+          >
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com" target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://www.twitter.com" target="_blank"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+          <p>&copy; 2024 Kiwi Cuisine. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
-    <footer>
-      <div class="social">
-        <a href="https://www.facebook.com" target="_blank"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
-        <a href="https://www.instagram.com" target="_blank"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a href="https://www.twitter.com" target="_blank"
-          ><i class="fa-brands fa-x-twitter"></i
-        ></a>
-        <p>&copy; 2024 Kiwi Cuisine. All rights reserved.</p>
-      </div>
-    </footer>
   </body>
 </html>

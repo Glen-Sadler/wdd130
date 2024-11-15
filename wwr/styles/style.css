@@ -56,6 +56,11 @@ nav a:hover {
   color: #f4f7f5;
 }
 
+.active {
+  background-color: #01295f;
+  color: #f4f7f5;
+}
+
 .logo {
   width: 80px;
 }
@@ -108,7 +113,7 @@ nav a:hover {
 }
 
 .title {
-    color: #01295f;
+  color: #01295f;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   font-size: 2em;
@@ -157,6 +162,7 @@ main section img {
   padding: 15px 30px;
   margin-top: 50px;
   border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .book:hover,
@@ -257,6 +263,123 @@ footer .social img {
   padding-top: 15px;
 }
 
+/* Rivers Styling */
+
+#rivers-hero {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  /* margin-top: -100px; */
+}
+
+#rivers-hero-box {
+  /* margin-top: 50px; */
+  margin-bottom: 50px;
+  grid-column: 1/6;
+  grid-row: 1/2;
+  z-index: -1;
+}
+
+.flip-image {
+  transform: rotateY(180deg);
+}
+
+.rivers-title {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  font-size: 2em;
+  margin-top: 10px;
+}
+
+.river-msg h1 {
+  color: #01295f;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+}
+.river-msg p {
+  color: #01295f;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#rivers-hero-img {
+  width: 100%;
+}
+
+.icon {
+  width: 80px;
+  padding-top: 10px;
+}
+
+#rivers-hero-msg {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  margin-top: 100px;
+}
+
+#rivers-hero-msg h1,
+#rivers-hero-msg h4 {
+  color: #ffffff;
+  text-align: center;
+}
+
+
+.rivers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 100px;
+  margin: 0px 50px;
+}
+
+.grid-item {
+  position: relative;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 10px solid rgba(132, 121, 121, 0.7);
+  transition: transform 0.5s;
+  box-shadow: 5px 5px 10px #6f7364;
+}
+
+.grid-item img:hover {
+  opacity: 0.6;
+  transform: scale(1.1);
+}
+
+.river-msg {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Vertically centers the content */
+  justify-content: center; /* Horizontally centers the content */
+  /* height: 500px; Set height for each grid item */
+  /* text-align: center; */
+}
+
+#msg-1 {
+  min-height: 600px;
+}
+
+#msg-2, #msg-3, #msg-4 {
+  min-height: 400px;
+}
+
+#msg-5, #msg-6 {
+  min-height: 300px;
+}
+
+
+/* Rivers Styling End */
+
+/* Contact Us Styling */
+
+.contact-us-content {
+  min-height: 100vh;
+}
+
+/* Contact Us Styling End */
+
 @media screen and (max-width: 900px) {
   #hero,
   .home-grid {
@@ -286,6 +409,61 @@ footer .social img {
   .home-title {
     font-size: 25px;
   }
+
+  .rivers {
+    gap: 0px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  #img-1 {
+    grid-row: 1 / 2;
+  }
+
+  #msg-1 {
+    grid-row: 2 / 3;
+  }
+  
+  #img-2 {
+    grid-row: 3 / 4;
+  }
+
+  #msg-2 {
+    grid-row: 4, 5;
+  }
+
+  #img-3 {
+    grid-row: 5 / 6;
+  }
+
+  #msg-3 {
+    grid-row: 6 / 7;
+  }
+
+  #img-4 {
+    grid-row: 7 / 8;
+  }
+
+  #msg-4 {
+    grid-row: 8 / 9;
+  }
+
+  #img-5 {
+    grid-row: 10 / 11;
+  }
+
+  #msg-5 {
+    grid-row: 11 / 12;
+  }
+
+  #img-6 {
+    grid-row: 12 / 13;
+  }
+
+  #msg-6 {
+    grid-row: 13 / 14;
+  }
+
   .rivers-card,
   .camping-card,
   .rapids-card {

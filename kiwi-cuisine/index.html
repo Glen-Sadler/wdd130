@@ -10,16 +10,36 @@
     <title>Kiwi-Cuisine | Home page</title>
   </head>
   <body>
-    <div id="top-content">
+    <div id="content-container">
       <header>
         <div class="logo">
-          <p id="brand"><a href="index.html">Kiwi Cuisine</a></p>
+          <a aria-label="Go to Home Page" href="index.html"
+            ><svg width="300" height="50" xmlns="http://www.w3.org/2000/svg">
+              <title>Go to Home Page</title>
+              <text
+                x="10"
+                y="35"
+                font-family="'DM Serif Display', serif"
+                font-size="26"
+                fill="black"
+                letter-spacing="10">
+                KIWI CUISINE
+              </text>
+            </svg></a
+          >
         </div>
+        <!-- Hamburger Menu Toggle -->
+        <input type="checkbox" id="menu-toggle" >
+        <label for="menu-toggle" class="menu-icon" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <!-- Navigation Menu -->
         <nav>
           <ul class="nav-container">
-            <li><a class="active" href="index.html">Home</a></li>
+            <li><a id="active" href="index.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
-            <!-- <li><a href="about.html">About Us</a></li> -->
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </nav>
@@ -40,50 +60,59 @@
             makes New Zealand a truly remarkable destination.
           </p>
         </div>
-          <button class="hero-button" onclick="location.href='contact.html'">Contact Us</button>
-          <div class="mid-content">
-            <img src="./images/hangi_v1.webp" alt="Hangi" >
-            <p class="mid-content-description">
-              The indigenous cuisine of Aotearoa, shaped by Māori culture,
-              features a rich variety of ingredients and traditional cooking
-              methods that honor the land and sea. The hāngi, an earth-cooked
-              meal, includes meats and root vegetables like kūmara, while kaimoana
-              (seafood) such as pāua, kina, and tītī bring unique coastal flavors
-              to the table. Native plants like puha, used in hearty boil-ups, and
-              edible seaweed like karengo add distinct local tastes, alongside
-              rewena, a traditional Māori bread made with a fermented potato
-              starter. These dishes reflect values of manaakitanga (hospitality)
-              and kaitiakitanga (guardianship), emphasizing respect for natural
-              resources. By preserving these foods, Māori culture sustains its
-              identity and shares its rich culinary heritage.
-            </p>
-          </div>
-          <div class="mid-content-1">
-            <img src="./images/kiwi_boilup.jpg" alt="boilup">
-              <p class="mid-content-description-1">
-                A Kiwi boil-up is a traditional New Zealand meal made by simmering
-                pork bones or other meat, along with root vegetables like kūmara (sweet potato)
-                and potatoes, with hearty greens like pūhā (sow thistle) or watercress. 
-                The dish is flavorful, warm, and comforting, capturing authentic Kiwi flavors
-                with indigenous ingredients.
-              </p>
-          </div>
+        <div>
+          <button class="hero-button" onclick="location.href='contact.html'">
+            Contact Us
+          </button>
+        </div>
+        <div class="mid-content">
+          <img id="image-1" src="images/hangi_v1.jpg" alt="Hangi" >
+          <p class="mid-content-description-1">
+            The indigenous cuisine of Aotearoa, shaped by Māori culture,
+            features a rich variety of ingredients and traditional cooking
+            methods that honor the land and sea. The hāngi, an earth-cooked
+            meal, includes meats and root vegetables like kūmara, while kaimoana
+            (seafood) such as pāua, kina, and tītī bring unique coastal flavors
+            to the table. Native plants like puha, used in hearty boil-ups, and
+            edible seaweed like karengo add distinct local tastes, alongside
+            rewena, a traditional Māori bread made with a fermented potato
+            starter. These dishes reflect values of manaakitanga (hospitality)
+            and kaitiakitanga (guardianship), emphasizing respect for natural
+            resources. By preserving these foods, Māori culture sustains its
+            identity and shares its rich culinary heritage.
+          </p>
+          <img id="image-2" src="images/kiwi_boilup.jpg" alt="boilup" >
+          <p class="mid-content-description-2">
+            A Kiwi boil-up is a traditional New Zealand meal made by simmering
+            pork bones or other meat, along with root vegetables like kūmara
+            (sweet potato) and potatoes, with hearty greens like pūhā (sow
+            thistle) or watercress. The dish is flavorful, warm, and comforting,
+            capturing authentic Kiwi flavors with indigenous ingredients.
+          </p>
         </div>
       </div>
+      <footer>
+        <div class="contact-details">
+          <h4>CONTACT DETAILS:</h4>
+          <p>Address: 187 Lower Dent Street, Whangarei 0110</p>
+          <p>Phone: 0800 235 235</p>
+          <a id="email-kiwikai" href="mailto:kiwikai@gmail.com"
+            ><strong>Email Us:</strong> kiwikai@gmail.com</a
+          >
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com" target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://www.twitter.com" target="_blank"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+          <p>&copy; 2024 Kiwi Cuisine. All rights reserved.</p>
+        </div>
+      </footer>
     </div>
-    <footer>
-      <div class="social">
-        <a href="https://www.facebook.com" target="_blank"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
-        <a href="https://www.instagram.com" target="_blank"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a href="https://www.twitter.com" target="_blank"
-          ><i class="fa-brands fa-x-twitter"></i
-        ></a>
-        <p>&copy; 2024 Kiwi Cuisine. All rights reserved.</p>
-      </div>
-    </footer>
   </body>
 </html>

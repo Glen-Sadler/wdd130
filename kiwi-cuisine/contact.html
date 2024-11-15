@@ -10,17 +10,37 @@
     <title>Kiwi-Cuisine | Contact Us</title>
   </head>
   <body>
-    <div id="top-content">
+    <div id="content-container">
       <header>
         <div class="logo">
-          <p id="brand"><a href="index.html">Kiwi Cuisine</a></p>
+          <a aria-label="Go to Home Page" href="index.html"
+            ><svg width="300" height="50" xmlns="http://www.w3.org/2000/svg">
+              <title>Go to Home Page</title>
+              <text
+                x="10"
+                y="35"
+                font-family="'DM Serif Display', serif"
+                font-size="26"
+                fill="black"
+                letter-spacing="10">
+                KIWI CUISINE
+              </text>
+            </svg></a
+          >
         </div>
+        <!-- Hamburger Menu Toggle -->
+        <input type="checkbox" id="menu-toggle" >
+        <label for="menu-toggle" class="menu-icon" aria-label="Toggle Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <!-- Navigation Menu -->
         <nav>
           <ul class="nav-container">
             <li><a href="index.html">Home</a></li>
             <li><a href="menu.html">Menu</a></li>
-            <!-- <li><a href="about.html">About Us</a></li> -->
-            <li><a class="active" href="contact.html">Contact Us</a></li>
+            <li><a id="active" href="contact.html">Contact Us</a></li>
           </ul>
         </nav>
       </header>
@@ -30,7 +50,7 @@
           <h2 class="hero-heading">Contact US</h2>
           <p class="hero-description">
             Nestled along the scenic banks of the Hātea River, our location at
-            187 Lower Dent Street in Whangarei offers a tranquil yet vibrant
+            187 Lower Dent Street in Whangai offers a tranquil yet vibrant
             setting for visitors. Surrounded by Whangarei’s natural beauty, the
             area reflects the essence of New Zealand’s North Island charm.
             Whether you’re a local or a traveler, our riverside spot provides a
@@ -39,90 +59,105 @@
           </p>
         </div>
         <div class="spacer"></div>
-        <div class="map-container">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6477.846639875439!2d174.32828671188815!3d-35.72810431763313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0b7ef28f4b9bb3%3A0x41f1171e1dce3663!2s187%20Lower%20Dent%20Street%2C%20Whang%C4%81rei%200110!5e0!3m2!1sen!2snz!4v1730257954109!5m2!1sen!2snz"
-            width="1000"
-            height="400"
-            style="
-              width: 90%;
-              height: 400px;
-              border: 0;
-              margin-top: 20px;
-              margin-bottom: 20px;
-            "
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-wrapper">
+          <div class="map-container">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6477.846639875439!2d174.32828671188815!3d-35.72810431763313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0b7ef28f4b9bb3%3A0x41f1171e1dce3663!2s187%20Lower%20Dent%20Street%2C%20Whang%C4%81rei%200110!5e0!3m2!1sen!2snz!4v1730257954109!5m2!1sen!2snz"
+              width="1000"
+              height="488"
+              style="
+                width: 100%;
+                height: 400px;
+                border: 0;
+                margin-top: 20px;
+                margin-bottom: 20px;
+              "
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
         </div>
         <div class="spacer"></div>
       </div>
-      <section class="form-container mobile">
-        <!-- Contact form section -->
-        <h1>CONTACT US</h1>
-        <p>
-          Please book here or drop us a line if you have any questions or
-          suggestions
-        </p>
-        <!-- Contact form elements -->
-        <form class="form">
-          <div class="form-row">
-            <div class="form-column">
-              <label for="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                placeholder="Your name here"
-                autocomplete="name" >
+      <div class="form-wrapper">
+        <section class="form-container">
+          <!-- Contact form section -->
+          <h1>CONTACT US</h1>
+          <p>
+            Please book here or drop us a line if you have any questions or
+            suggestions
+          </p>
+          <!-- Contact form elements -->
+          <form class="form">
+            <div class="form-row">
+              <div class="form-column">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  placeholder="Your name here"
+                  autocomplete="name" >
+              </div>
+              <div class="form-column">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Your email here"
+                  autocomplete="email" >
+              </div>
             </div>
-            <div class="form-column">
-              <label for="email">Email</label>
-              <input
-                type="email"
-                id="email"
-                placeholder="Your email here"
-                autocomplete="email" >
+            <div class="form-row">
+              <div class="form-column">
+                <label for="subject">Subject</label>
+                <input
+                  type="text"
+                  id="subject"
+                  placeholder="Your subject here" >
+              </div>
+              <div class="form-column">
+                <label for="contact">Contact Number</label>
+                <input
+                  type="tel"
+                  id="contact"
+                  placeholder="Your phone number here" >
+              </div>
             </div>
-          </div>
-          <div class="form-row">
-            <div class="form-column">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" placeholder="Your subject here" >
+            <div class="form-row">
+              <div class="form-column">
+                <label for="issue">Describe your need</label>
+                <textarea
+                  id="issue"
+                  placeholder="Describe your need in detail here"
+                  rows="3"></textarea>
+              </div>
             </div>
-            <div class="form-column">
-              <label for="contact">Contact Number</label>
-              <input
-                type="tel"
-                id="contact"
-                placeholder="Your phone number here" >
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-column">
-              <label for="issue">Describe your need</label>
-              <textarea
-                id="issue"
-                placeholder="Describe your need in detail here"
-                rows="3"></textarea>
-            </div>
-          </div>
-          <button>Submit</button>
-        </form>
-      </section>
-    </div>
-    <footer>
-      <div class="social">
-        <a href="https://www.facebook.com" target="_blank"
-          ><i class="fa-brands fa-facebook"></i
-        ></a>
-        <a href="https://www.instagram.com" target="_blank"
-          ><i class="fa-brands fa-instagram"></i
-        ></a>
-        <a href="https://www.twitter.com" target="_blank"
-          ><i class="fa-brands fa-x-twitter"></i
-        ></a>
-        <p>&copy; 2024 Kiwi Cuisine. All rights reserved.</p>
+            <button>Submit</button>
+          </form>
+        </section>
       </div>
-    </footer>
+      <footer>
+        <div class="contact-details">
+          <h4>CONTACT DETAILS:</h4>
+          <p>Address: 187 Lower Dent Street, Whangarei 0110</p>
+          <p>Phone: 0800 235 235</p>
+          <a id="email-kiwikai" href="mailto:kiwikai@gmail.com"
+            ><strong>Email Us:</strong> kiwikai@gmail.com</a
+          >
+        </div>
+        <div class="social">
+          <a href="https://www.facebook.com" target="_blank"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a href="https://www.instagram.com" target="_blank"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="https://www.twitter.com" target="_blank"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+          <p>&copy; 2024 Kiwi Cuisine. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
   </body>
 </html>
