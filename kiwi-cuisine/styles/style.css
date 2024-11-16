@@ -444,7 +444,7 @@ footer {
   display: flex;
   flex-direction: column;
   grid-column: 9 / 10;
-  text-align: left;
+  text-align: right;
 }
 
 .links a {
