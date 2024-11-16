@@ -405,9 +405,11 @@ and cost. */
   color: #ffffff;
 }
 
-.social-media a:hover,
-.social-media a:focus {
-  color: #008000;
+.social a:hover,
+.social a:focus {
+  color: #fec857;
+  font-size: 1.75em;
+
 }
 
 footer {
@@ -443,7 +445,7 @@ footer {
 .links {
   display: flex;
   flex-direction: column;
-  grid-column: 9 / 10;
+  grid-column: 8 / 10;
   text-align: right;
 }
 
