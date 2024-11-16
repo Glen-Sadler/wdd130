@@ -322,7 +322,6 @@ footer .social img {
   text-align: center;
 }
 
-
 .rivers {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -361,14 +360,16 @@ footer .social img {
   min-height: 600px;
 }
 
-#msg-2, #msg-3, #msg-4 {
+#msg-2,
+#msg-3,
+#msg-4 {
   min-height: 400px;
 }
 
-#msg-5, #msg-6 {
+#msg-5,
+#msg-6 {
   min-height: 300px;
 }
-
 
 /* Rivers Styling End */
 
@@ -377,6 +378,87 @@ footer .social img {
 .contact-us-content {
   min-height: 100vh;
 }
+
+#feedback {
+  background-color: antiquewhite;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0.5em;
+  /* make this element invisible until we are ready for it */
+  display: none;
+}
+.moveDown {
+  margin-top: 3em;
+}
+
+.button {
+  /* Align buttons with the text fields */
+  padding-left: 90px; /* same size as the label elements */
+}
+
+button {
+  /* This extra margin represent roughly the same space as the space
+     between the labels and their text fields */
+  margin-left: 0.5em;
+}
+
+/* Form styling start */
+
+body {
+  /* Center the form on the page */
+  text-align: center;
+}
+
+form {
+  display: inline-block;
+  margin-top: 20px;
+  /* Form outline */
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 1em;
+}
+
+p + p {
+  margin-top: 1em;
+}
+
+label {
+  /* Uniform size & alignment */
+  display: inline-block;
+  min-width: 90px;
+  text-align: right;
+}
+
+input,
+textarea {
+  /* To make sure that all text fields have the same font settings
+     By default, text areas have a monospace font */
+  font: 1em sans-serif;
+  /* Uniform text field size */
+  width: 300px;
+  box-sizing: border-box;
+  /* Match form field borders */
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  /* Set the outline width and style */
+  outline-style: solid;
+  /* To give a little highlight on active elements */
+  outline-color: #000;
+}
+
+textarea {
+  /* Align multiline text fields with their labels */
+  vertical-align: top;
+  /* Provide space to type some text */
+  height: 5em;
+}
+
+/* Form styling end */
 
 /* Contact Us Styling End */
 
@@ -423,7 +505,7 @@ footer .social img {
   #msg-1 {
     grid-row: 2 / 3;
   }
-  
+
   #img-2 {
     grid-row: 3 / 4;
   }
