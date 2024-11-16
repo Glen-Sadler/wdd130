@@ -82,7 +82,7 @@ nav {
   transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-.nav-container a:hover
+.nav-container a:hover,
 .nav-container a:focus {
   font-weight: 700;
   font-size: 1.1em;
