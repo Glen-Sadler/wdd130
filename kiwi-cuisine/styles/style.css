@@ -79,9 +79,11 @@ nav {
   color: #323232;
   text-decoration: none;
   padding: 10px 25px;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-.nav-container a:hover {
+.nav-container a:hover
+.nav-container a:focus {
   font-weight: 700;
   font-size: 1.1em;
   color: #ffffff;
@@ -403,13 +405,13 @@ and cost. */
   line-height: 40px;
   border-radius: 50px;
   color: #ffffff;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .social a:hover,
 .social a:focus {
   color: #fec857;
   font-size: 1.75em;
-
 }
 
 footer {
@@ -440,6 +442,8 @@ footer {
 
 #email-kiwikai:hover {
   color: #fec857;
+  font-size: 1.25em;
+  transition: color 0.3s ease;
 }
 
 .links {
@@ -453,9 +457,11 @@ footer {
   color: #ffffff;
   text-decoration: none;
   padding: 2px 0px;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
-.links a:hover {
+.links a:hover,
+.links a:focus {
   color: #fec857;
   font-size: 1.2em;
 }
