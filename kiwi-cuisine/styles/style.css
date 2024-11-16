@@ -44,7 +44,7 @@ header {
   z-index: 1000; /* Ensure it stays above other content */
   background-color: #ddcfc8; /* Initial transparent background */
   transition: background-color 0.3s ease; /* Smooth transition for color change */
-  position: relative;
+  /* position: relative; */
 }
 
 .menu-icon {
@@ -402,7 +402,7 @@ and cost. */
   text-align: center;
   line-height: 40px;
   border-radius: 50px;
-  color: #fff;
+  color: #ffffff;
 }
 
 .social-media a:hover,
@@ -434,6 +434,28 @@ footer {
   font-weight: 400;
   font-size: 1.2em;
   color: #ffffff;
+}
+
+#email-kiwikai:hover {
+  color: #fec857;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  grid-column: 9 / 10;
+  text-align: left;
+}
+
+.links a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 2px 0px;
+}
+
+.links a:hover {
+  color: #fec857;
+  font-size: 1.2em;
 }
 
 /* Hamburger menu styling */
