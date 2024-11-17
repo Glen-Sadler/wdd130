@@ -148,15 +148,13 @@ three pages i.e., Home, Menu, and Contact */
   font-weight: 600;
   background-color: #ffc857;
   margin-left: 10%;
+  transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
 }
 
-.hero-button a {
-  text-decoration: none;
-  color: #000000;
-  display: block;
-  height: 100%;
-  width: 100%;
-  line-height: normal;
+.hero-button:hover {
+  color: #ffffff;
+  background-color: #ddcfc8;
+  border: 2px solid #000000;
 }
 
 .spacer {
