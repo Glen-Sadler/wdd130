@@ -172,16 +172,16 @@ just below the hero section  */
 
 .mid-content img {
   width: 100%;
-  grid-column: span 10; /* Images span all 10 columns */
-  grid-row: auto; /* Each image takes up a single row */
+  grid-column: span 10;
+  grid-row: auto;
 }
 
 .mid-content-description-1,
 .mid-content-description-2 {
-  grid-column: 2 / 8; /* Paragraphs span from column 2 to column 8 */
-  grid-row: auto; /* Each <p> tag takes up a single row */
-  text-align: justify; /* Optional: align text for better readability */
-  padding: 50px 0px; /* Optional: add padding around text */
+  grid-column: 2 / 8;
+  grid-row: auto;
+  text-align: justify; 
+  padding: 50px 0px;
 }
 
 /* Styles for map on contact page */
@@ -223,7 +223,6 @@ and cost. */
   height: 100%;
   object-fit: cover;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
-  /* object-fit: contain; Adjusts image to fit within the bounds without cropping */
 }
 
 .menu-content h2 {
@@ -373,10 +372,10 @@ and cost. */
 .form-column textarea:focus,
 .form-container input:focus {
   outline: none;
-  border-color: #008000;
+  border-color: #fec857;
 }
 
-.form button {
+.submit-button {
   border: none;
   padding: 10px 50px;
   font-size: 1.25em;
@@ -386,6 +385,12 @@ and cost. */
   font-size: 1rem;
   color: #000000;
   cursor: pointer;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.submit-button:hover{
+  color: #ffffff;
+  background-color: #ddcfc8;
 }
 
 .social {
