@@ -34,6 +34,7 @@ body {
   color: #2e0014;
 }
 
+/* Header, Logo, Nav, and Hamburger Icon styling */
 header {
   display: grid;
   grid-template-columns: auto 400px;
@@ -41,22 +42,62 @@ header {
   padding: 20px 60px;
   position: sticky;
   top: 0;
-  z-index: 1000; /* Ensure it stays above other content */
-  background-color: #ddcfc8; /* Initial transparent background */
+  z-index: 1000;
+  background-color: #ddcfc8; 
   transition: background-color 0.3s ease-in-out; /* Smooth transition for color change */
-  /* position: relative; */
 }
 
-.menu-icon {
+/* Hamburger Icon Styling */
+/* Positioned top right */
+/* Hide the checkbox input */
+#menu-toggle {
   display: none;
-  cursor: pointer;
-  position: absolute; /*Positioned absolutely*/
-  right: 60px; /* 20px from the right */
+}
+
+/* Hamburger Menu Icon */
+/* This is a css only implementation of */
+/* a hamburger icon and menu using transform to */
+/* create an animation of the span tag */
+/* Hidden by default for larger screens */
+.menu-icon {
+  display: none; 
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  right: 60px;
   top: 25px;
   width: 30px;
   height: 25px;
-  z-index: 1001; /* Keep above other header elements */
+  z-index: 1001;
+  cursor: pointer;
 }
+
+.menu-icon span {
+  display: block;
+  width: 100%;
+  height: 4px;
+  background-color: #000000;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+/* Hamburger icon animation when active */
+#menu-toggle:checked + .menu-icon span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+#menu-toggle:checked + .menu-icon span:nth-child(2) {
+  opacity: 0;
+}
+
+#menu-toggle:checked + .menu-icon span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
+
+/* Hanmburger menu styling end */
+
+
+/* Standard Navigation menu Styling Start */
 
 nav {
   display: flex;
@@ -89,6 +130,8 @@ nav {
   color: #ffffff;
 }
 
+/* This allows the user to identify what is the */
+/* active page */
 #active {
   font-weight: 700;
   color: #ffffff;
@@ -99,10 +142,13 @@ nav {
   align-items: center;
   padding-left: 20px;
 }
+/* End of header, Logo, Nav, Hamburger Icon styling */
+
 
 /* These styles are used in the hero section of all
 three pages i.e., Home, Menu, and Contact */
 
+/* Hero Styling */
 .hero-container {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
@@ -148,18 +194,22 @@ three pages i.e., Home, Menu, and Contact */
   font-weight: 600;
   background-color: #ffc857;
   margin-left: 10%;
-  transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .hero-button:hover {
   color: #ffffff;
-  background-color: #ddcfc8;
-  border: 2px solid #000000;
+  background-color: #000000;
+  border: 2px solid #ffffff;
 }
 
 .spacer {
   height: 50px;
 }
+
+/* End of Hero Styling */
+
+/* Start of middle content styling */
 
 /* styles to hold the first image on both the Home, and Menu Page
 just below the hero section  */
@@ -194,6 +244,8 @@ just below the hero section  */
   grid-row: 1 / 4;
 }
 
+/* End of middle content styling */
+
 /* Menu Grid to hold pictures of meals description
 and cost. */
 
@@ -208,7 +260,6 @@ and cost. */
   margin-bottom: 1.25em;
 }
 
-/*  */
 .menu-content div {
   display: flex;
   flex-direction: column;
@@ -233,6 +284,8 @@ and cost. */
   margin-top: 1.5em;
 }
 
+/* Placement of each  menu item which includes*/
+/* the images and text */
 #menu-item-1 {
   grid-column: 2 / 6;
   grid-row: 1 / 2;
@@ -293,6 +346,8 @@ and cost. */
   grid-row: 6 / 7;
 }
 
+/* End of Menu Styling */
+
 /* Map styling - Contact page */
 
 .map-container {
@@ -314,7 +369,7 @@ and cost. */
 }
 
 .form-container {
-  background-color: #323232;
+  background-color: #000000;
   width: 100%;
   padding: 35px 50px;
   margin: 0 auto;
@@ -390,39 +445,19 @@ and cost. */
 
 .submit-button:hover{
   color: #ffffff;
-  background-color: #ddcfc8;
+  background-color: #000000;
+  border: 2px solid #ffffff;
 }
 
-.social {
-  grid-column: 5 / 7;
-}
+/* End of form styling */
 
-.social a {
-  margin: 0 10px 10px 0;
-  font-size: 20px;
-  display: inline-block;
-  height: 40px;
-  width: 40px;
-  background-color: black;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50px;
-  color: #ffffff;
-  transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out;
-}
-
-.social a:hover,
-.social a:focus {
-  color: #fec857;
-  font-size: 1.75em;
-}
-
+/* Start of footer styling */
 footer {
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   text-align: center;
   padding: 50px 0px;
-  background-color: #323232; /* Matches the brand color */
+  background-color: #000000; /* Matches the brand color */
   color: #ffffff; /* White text */
   font-size: 0.8em;
 }
@@ -449,6 +484,31 @@ footer {
   font-size: 1.25em;
 }
 
+.social {
+  grid-column: 5 / 7;
+}
+
+.social a {
+  margin: 0 10px 10px 0;
+  font-size: 20px;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: #ddcfc8;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50px;
+  color: #000000;
+  transition: color 0.3s ease-in-out, font-size 0.3s ease-in-out, background-color ease-in-out;
+}
+
+.social a:hover,
+.social a:focus {
+  color: #fec857;
+  background-color: #000000;
+  font-size: 1.75em;
+}
+
 .links {
   display: flex;
   flex-direction: column;
@@ -469,45 +529,6 @@ footer {
   font-size: 1.2em;
 }
 
-/* Hamburger menu styling */
-/* Hide the checkbox input */
-#menu-toggle {
-  display: none;
-}
-
-/* Hamburger Menu Icon */
-.menu-icon {
-  display: none; /* Hidden by default for larger screens */
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 25px;
-  cursor: pointer;
-}
-
-.menu-icon span {
-  display: block;
-  width: 100%;
-  height: 4px;
-  background-color: black;
-  border-radius: 2px;
-  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
-}
-
-/* Hamburger icon animation when active */
-#menu-toggle:checked + .menu-icon span:nth-child(1) {
-  transform: translateY(10px) rotate(45deg);
-}
-
-#menu-toggle:checked + .menu-icon span:nth-child(2) {
-  opacity: 0;
-}
-
-#menu-toggle:checked + .menu-icon span:nth-child(3) {
-  transform: translateY(-10px) rotate(-45deg);
-}
-
-/* Hanmburger menu styling end */
 
 /* Add styles specific to screens smaller than or equal to 900px */
 @media (max-width: 900px) {
