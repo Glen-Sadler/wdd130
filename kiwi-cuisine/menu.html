@@ -3,55 +3,54 @@
   <head>
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" >
+    <link rel="stylesheet" type="text/css" href="./styles/fontawesome.css">
+    <link rel="stylesheet" type="text/css" href="./styles/brands.css">
     <link rel="stylesheet" href="./styles/style.css" >
     <title>Kiwi-Cuisine | Menu</title>
   </head>
   <body>
     <div id="content-container">
       <header>
-        <div class="logo">
-          <a aria-label="Go to Home Page" href="index.html"
-            ><svg width="300" height="50" xmlns="http://www.w3.org/2000/svg">
-              <title>Go to Home Page</title>
-              <text
-                x="10"
-                y="35"
-                font-family="'DM Serif Display', serif"
-                font-size="26"
-                fill="black"
-                letter-spacing="10">
-                KIWI CUISINE
-              </text>
-            </svg></a
-          >
-        </div>
-        <!-- Hamburger Menu Toggle -->
-        <input type="checkbox" id="menu-toggle" >
-        <label for="menu-toggle" class="menu-icon" aria-label="Toggle Menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </label>
-        <!-- Navigation Menu -->
-        <nav>
-          <ul class="nav-container">
-            <li><a href="index.html">Home</a></li>
-            <li><a id="active" href="menu.html">Menu</a></li>
-            <li><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </nav>
+        <!-- <div class="container"> -->
+          <div class="logo">
+            <a aria-label="Go to Home Page" href="index.html"
+              ><svg width="300" height="50" xmlns="http://www.w3.org/2000/svg">
+                <title>Go to Home Page</title>
+                <text
+                  x="0"
+                  y="35"
+                  font-family="'DM Serif Display', serif"
+                  font-size="24"
+                  fill="black"
+                  letter-spacing="10">
+                  KIWI CUISINE
+                </text>
+              </svg></a
+            >
+          </div>
+          <!-- Hamburger Menu Toggle -->
+          <input type="checkbox" id="menu-toggle" >
+          <label for="menu-toggle" class="menu-icon" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+          <!-- Navigation Menu -->
+          <nav>
+            <ul class="nav-container">
+              <li><a href="index.html">Home</a></li>
+              <li><a id="active" href="menu.html">Menu</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+          </nav>
+        <!-- </div> -->
       </header>
       <div class="main">
         <div class="hero-container">
           <p class="hero-preface">
             Experience Authentic Indigenous Flavors Today
           </p>
-          <h2 class="hero-heading">
-            Relish the Authentic Flavors of or Menu
-          </h2>
+          <h2 class="hero-heading">Relish the Authentic Flavors of our Menu</h2>
           <p class="hero-description">
             At or restaurant, we celebrate the rich culinary heritage of
             indigenous New Zealand with an array of exquisite dishes. Dive into
@@ -235,5 +234,141 @@
         </div>
       </footer>
     </div>
+    <!-- placing the modal div at the end of the body helps ensure 
+     that the modal works properly with the JavaScript-->
+    <!-- Modal Structure -->
+    <!-- The id's are used in the javascript as  -->
+    <div id="modal" class="modal fade">
+      <div class="modal-content fade">
+        <span id="close-modal" class="close-modal">&times;</span>
+        <div class="slider-container">
+          <img id="modal-img" class="modal-img fade" src="" alt="" >
+          <div class="modal-text fade">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <h2 id="modal-price"></h2>
+          </div>
+        </div>
+        <div class="modal-navigation">
+          <button id="prev-slide" class="slider-nav fade">&lt;</button>
+          <button id="next-slide" class="slider-nav fade">&gt;</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Select all menu items and the modal elements
+      const menuItems = document.querySelectorAll('.menu-content div');
+      const modal = document.getElementById('modal');
+      const modalImg = document.getElementById('modal-img');
+      const modalTitle = document.getElementById('modal-title');
+      const modalDesc = document.getElementById('modal-desc');
+      const modalPrice = document.getElementById('modal-price');
+      const closeModalBtn = document.getElementById('close-modal');
+      const prevSlideBtn = document.getElementById('prev-slide');
+      const nextSlideBtn = document.getElementById('next-slide');
+
+      // Array to hold the menu data
+      let menuData = [];
+      let currentIndex = 0;
+
+      // Populate menuData with all menu items
+      menuItems.forEach((item, index) => {
+        const imgSrc = item.querySelector('img').src;
+        const title = item.querySelector('h2').textContent;
+        const desc = item.querySelector('p').textContent;
+        const price = item.querySelector('h2:last-of-type').textContent;
+
+        menuData.push({
+          imgSrc,
+          title,
+          desc,
+          price,
+        });
+      });
+
+      // Add click event to open modal
+      menuItems.forEach((item, index) => {
+        item.addEventListener('click', () => {
+          if (window.innerWidth > 900) {
+            // Only allow modal on larger screens
+            currentIndex = index; // Set current index to the clicked item
+            updateModalContent(currentIndex);
+            modal.style.display = 'flex';
+            modal.classList.add('show'); // Add transition class
+          }
+        });
+      });
+
+      // Close the modal
+      closeModalBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+        modal.classList.remove('show'); // Remove transition class
+      });
+
+      // Close modal when clicking outside of it
+      window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+          modal.classList.remove('show'); // Remove transition class
+        }
+      });
+
+      // Function to update the modal content with the current index
+      function updateModalContent(index) {
+        const item = menuData[index];
+        modalImg.src = item.imgSrc;
+        modalTitle.textContent = item.title;
+        modalDesc.textContent = item.desc;
+        modalPrice.textContent = item.price;
+      }
+
+      // Function to show the next or previous slide
+      function navigateSlide(direction) {
+        currentIndex =
+          (currentIndex + direction + menuData.length) % menuData.length;
+        updateModalContent(currentIndex);
+      }
+
+      // Function to update the modal content with the current index
+      function updateModalContent(index) {
+        const item = menuData[index];
+
+        // Add the fade class to create the fade effect
+        modalImg.classList.add('fade');
+        modalTitle.classList.add('fade');
+        modalDesc.classList.add('fade');
+        modalPrice.classList.add('fade');
+
+        // Update the content after a short delay for the fade-in effect
+        setTimeout(() => {
+          modalImg.src = item.imgSrc;
+          modalTitle.textContent = item.title;
+          modalDesc.textContent = item.desc;
+          modalPrice.textContent = item.price;
+
+          // Remove the fade class to reset for future transitions
+          modalImg.classList.remove('fade');
+          modalTitle.classList.remove('fade');
+          modalDesc.classList.remove('fade');
+          modalPrice.classList.remove('fade');
+        }, 150); // Delay slightly less than animation-duration (1.5s)
+      }
+
+      // Function to show the next or previous slide
+      function navigateSlide(direction) {
+        currentIndex =
+          (currentIndex + direction + menuData.length) % menuData.length;
+        updateModalContent(currentIndex);
+      }
+
+      // Add event listeners to the navigation buttons
+      prevSlideBtn.addEventListener('click', () => {
+        navigateSlide(-1); // Show previous slide
+      });
+
+      nextSlideBtn.addEventListener('click', () => {
+        navigateSlide(1); // Show next slide
+      });
+    </script>
   </body>
 </html>
