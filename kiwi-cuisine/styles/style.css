@@ -466,7 +466,7 @@ and cost. */
   color: #ffffff;
   border-radius: 50%;
   background-color: rgba(0, 0, 0,0.6);
-  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
 .close-modal:hover {
