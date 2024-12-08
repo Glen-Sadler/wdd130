@@ -127,19 +127,19 @@ nav {
 
 .nav-container li {
   text-align: right;
-  padding-left: 30px;
+  padding: 0px 20px 20px; 
 }
 
 .nav-container a:hover,
 .nav-container a:focus {
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 800;
+  
 }
 
 /* This allows the user to identify which page is  active* */
 #active {
-  font-weight: 700;
-  color: #ffffff;
+  font-weight: 800;
+  border-bottom: #000000 2px solid;
 }
 
 /* End of header, Logo, Nav, Hamburger Icon styling */
