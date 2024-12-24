@@ -415,8 +415,9 @@ div[id^='menu-item']:nth-child(even) {
   ); /* Make the image take full width minus the padding */
   height: auto; /* Maintain aspect ratio */
   margin-bottom: 10px;
-  margin-left: 10px; /* Add 10px margin on the left */
-  margin-right: 10px; /* Add 10px padding on the right */
+  /* margin-left: 10px;
+  margin-right: 10px; */
+  margin-inline: 10px;
   border-radius: 10px;
   transition: opacity 0.5s ease-in-out;
 }
